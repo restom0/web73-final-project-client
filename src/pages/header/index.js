@@ -6,7 +6,13 @@ import { ButtonGroup, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Avatar } from "antd";
 const Header = () => {
   // const navigate = useNavigate();
-
+  if (!localStorage.getItem("token")) {
+    window.location.replace("/");
+  }
+  const signout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     //
     //
@@ -90,7 +96,9 @@ const Header = () => {
             >
               <NavDropdown.Item href="#action/3.1">Thông tin</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Đăng xuất</NavDropdown.Item>
+              <NavDropdown.Item href="#" onClick={signout}>
+                Đăng xuất
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

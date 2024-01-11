@@ -49,7 +49,7 @@ const ProfileMain = ({ setPage }) => {
             <Card style={{ textAlign: "center" }}>
               <p>
                 <b style={{ fontSize: "30pt" }}>
-                  {temp.followers ? temp.followers : "Loading"}
+                  {temp.followers ? temp.followers : 0}
                 </b>
               </p>
               <p>followers</p>
@@ -59,7 +59,7 @@ const ProfileMain = ({ setPage }) => {
             <Card style={{ textAlign: "center" }}>
               <p>
                 <b style={{ fontSize: "30pt" }}>
-                  {temp.posts ? temp.posts : "Loading"}
+                  {temp.posts ? temp.posts : 0}
                 </b>
               </p>
               <p>posts</p>

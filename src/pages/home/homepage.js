@@ -17,9 +17,9 @@ const Home = () => {
           <div className="page-body">
             <MainPage />
           </div>
-          <div className="friends-list">
+          {/* <div className="friends-list">
             <RightBar />
-          </div>
+          </div> */}
         </div>
       </div>
 
