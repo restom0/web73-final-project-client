@@ -17,6 +17,7 @@ const Login = () => {
       if (response.status === 201) {
         message.success("Đăng nhập thành công!");
         localStorage.setItem("token", response.data.data.token);
+        window.location.replace("/home");
         form.setFieldsValue({
           username: "",
           password: "",
@@ -108,7 +109,7 @@ const Register = () => {
           message.info(
             "Bạn sẽ được chuyển hướng về trang đăng nhập sau 3 giây..."
           );
-          setTimeout(() => navigate("/auth/login"), 3000);
+          setTimeout(() => navigate("/"), 3000);
         }, 2000);
       }
     } catch (error) {
@@ -208,7 +209,7 @@ const Register = () => {
             <br />
             <p className="text2">
               Have an account already ?{" "}
-              <a className="text3" onClick={() => navigate("/auth/login")}>
+              <a className="text3" onClick={() => navigate("/")}>
                 Login now !
               </a>
             </p>
